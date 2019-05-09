@@ -48,6 +48,12 @@ Create a Angular Application similar to Google Keep with the following specs.
 	5.1 `getNotes()` to fetch the notes collection  
 	5.2 `addNote()` to persist a note to server  
 6. In case you have implemented this -> `json-server should host and serve angular application and notes api `, please add the necessary steps to run the application in this same file.  
+
+Answer :
+			1. ng build
+			2. dist folder will be created with compiled code
+			3. json-server server/db.json -s dist
+			
 7. Ensure following commands succeed in your local machine before submitting your code for Preliminary automated review as described next -  
 ```npm install
 npm run build

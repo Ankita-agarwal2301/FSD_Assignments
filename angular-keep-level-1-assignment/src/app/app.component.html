@@ -1,11 +1,26 @@
 <!-- HeaderComponent to be displayed as part of AppComponent -->
 <app-header></app-header>
-
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Take a note
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+  
+   <input [(ngModel)]="note.title" type="text" name="title" id="title" placeholder="Enter title" ngDefaultControl>
+   <textarea [(ngModel)]="note.text" name="text" id="text" placeholder="Enter text" ngDefaultControl></textarea>
+  <button (click) = takeNote() >Done</button>
+  </mat-expansion-panel>
 <!-- Label to display any error messages -->
-<label class="error-message">{{ errMessage }}</label>
+<label [(ngModel)]="errMessage" class="error-message" ngDefaultControl>{{ errMessage }}</label>
 
 <!-- To add notes -->
-
+<div>
+    <mat-card *ngFor="let note of noteArray">
+        <mat-card-title>{{note.title}}</mat-card-title>
+        <mat-card-content>{{note.text}}</mat-card-content>
+    </mat-card>
+</div>
 
 
 
