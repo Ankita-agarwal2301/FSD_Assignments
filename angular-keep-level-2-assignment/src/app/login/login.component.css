@@ -1,0 +1,18 @@
+form{
+    border:1px solid navy;
+    margin: auto;
+    margin-top:30px;
+    width : 50vw;
+    padding:15px;
+}
+
+form div{
+    margin : 5px;
+    padding : 5px;
+}
+
+small{
+    color:red;
+    margin : 2px;
+    font-style: italic;
+}
