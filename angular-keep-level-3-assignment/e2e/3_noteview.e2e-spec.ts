@@ -1,4 +1,5 @@
 import { NoteViewPage } from './page-objects/noteview.po';
+import { log } from 'util';
 
 describe('note view page', () => {
   let page: NoteViewPage;
@@ -38,6 +39,13 @@ describe('note view page', () => {
     expect(page.isEditTextInputBoxPresent()).toBeTruthy('Text input box should exist with name attribute as editText');
     expect(page.isEditStatusInputBoxPresent()).toBeTruthy('Status select box should exist with name attribute as editStatus');
     expect(page.isSaveButtonPresent()).toBeTruthy('Save button exists with Save text');
+    console.log('lasttttttttttttttttttttttttttttt');
+    
+   //console.log(page.getLastNoteTitle());
+   console.log('alllllllllllllllllllll');
+   
+   //console.log(page.getAllNotes);
+   
     expect(page.getLastNoteTitle()).toBe(page.getMockNote().title,
       'Added note title should be shown in <mat-card-title> element on note.component.html');
   });

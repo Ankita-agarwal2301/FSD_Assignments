@@ -2,3 +2,11 @@
 <label class="error-message">{{ errMessage }}</label>
 
 <!-- Expansion panel to add new notes -->
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>Take a note</mat-panel-title>
+  </mat-expansion-panel-header>
+  <input [(ngModel)]="note.title" type="title" name="title" id="title" placeholder="Enter title">
+  <textarea [(ngModel)]="note.text" name="text" id="text" placeholder="Enter title"></textarea>
+  <button (click)='save()' text="Done">Done</button>
+</mat-expansion-panel>

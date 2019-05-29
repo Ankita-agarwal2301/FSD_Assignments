@@ -1,0 +1,10 @@
+<form [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+    <input type="text" class="username" matInput placeholder="User Name" formControlName="username">
+    <!-- <input class="username" matInput [formControl]='username' formControlName="username" placeholder="User Name"> -->
+
+    <input type="password" class="password" placeholder="Password" formControlName="password">
+    <!-- <input class="password" matInput type = 'password' formControlName="password" [formControl]='password'> -->
+    <!-- <button>Save</button> -->
+    <button type="submit" mat-button>Submit</button>
+    <strong *ngIf="submitMessage" class="error-message">{{submitMessage}}</strong>
+</form>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterService } from '../services/router.service';
 
 @Component({
   selector: 'app-header',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   isNoteView = true;
+  constructor(private router: RouterService) { }
+  noteView() {
+    this.isNoteView = true;
+    this.router.routeToNoteView();
+  }
+  listView() {
+    this.isNoteView = false;
+    this.router.routeToListView();
+  }
 }

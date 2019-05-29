@@ -2,18 +2,18 @@
   "notes": [
     {
       "id": 1,
-      "title": "Read Angular5 blog",
-      "text": "Shall do at 6 pm",
-      "state": "not-started"
+      "title": "Read Angular5 blo",
+      "text": "Shall do at 11 pm",
+      "state": "completed"
     },
     {
       "id": 2,
-      "title": "Call Ravi",
+      "title": "Call Raviy",
       "text": "Track the new submissions",
-      "state": "started"
+      "state": "completed"
     },
     {
-      "title": "Capitalism",
+      "title": "Capitalismm",
       "text": "Mark Twain",
       "id": 3,
       "state": "completed"

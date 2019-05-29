@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Note } from '../note';
+import { RouterService } from '../services/router.service';
+import { log } from 'util';
 
 @Component({
   selector: 'app-note',
@@ -6,5 +9,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./note.component.css']
 })
 export class NoteComponent {
+  @Input()
+  note: Note = new Note();
+  constructor(private routerService: RouterService) { }
+
+  edit() {
+    console.log('edoittttttttttttttttttttttttttt');
+
+    this.routerService.routeToEditNoteView(this.note.id);
+  }
 
 }

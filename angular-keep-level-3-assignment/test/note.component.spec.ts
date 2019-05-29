@@ -43,7 +43,9 @@ import {
   ListViewDummyComponent,
   NoteViewDummyComponent,
   DashboardDummyComponent,
-  AppDummyComponent} from './routes.test';
+  AppDummyComponent
+} from './routes.test';
+import { log } from 'util';
 
 
 const testConfig = {
@@ -53,7 +55,7 @@ const testConfig = {
       title: 'Read Angular 5 blog again',
       text: 'Shall do at 7 pm',
       state: 'not-started'
-      },
+    },
     negative: [],
     editNotePath: '/dashboard/(noteEditOutlet:note/1/edit)'
   }
@@ -71,51 +73,51 @@ describe('NoteComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-      NoteComponent,
-      EditNoteOpenerDummyComponent,
-      LoginDummyComponent,
-      ListViewDummyComponent,
-      NoteViewDummyComponent,
-      DashboardDummyComponent,
-      AppDummyComponent],
+        NoteComponent,
+        EditNoteOpenerDummyComponent,
+        LoginDummyComponent,
+        ListViewDummyComponent,
+        NoteViewDummyComponent,
+        DashboardDummyComponent,
+        AppDummyComponent],
       schemas: [NO_ERRORS_SCHEMA],
       imports: [
-      RouterTestingModule.withRoutes(routes),
-      MatInputModule,
-      MatAutocompleteModule,
-      MatCheckboxModule,
-      MatDatepickerModule,
-      MatFormFieldModule,
-      MatInputModule,
-      MatRadioModule,
-      MatSelectModule,
-      MatSliderModule,
-      MatSlideToggleModule,
-      MatMenuModule,
-      MatSidenavModule,
-      MatToolbarModule,
-      MatCardModule,
-      MatExpansionModule,
-      MatGridListModule,
-      MatListModule,
-      MatStepperModule,
-      MatTabsModule,
-      MatButtonModule,
-      MatButtonToggleModule,
-      MatChipsModule,
-      MatIconModule,
-      MatProgressSpinnerModule,
-      MatProgressBarModule,
-      MatDialogModule,
-      MatSnackBarModule,
-      MatTooltipModule,
-      MatPaginatorModule,
-      MatSortModule,
-      MatTableModule
+        RouterTestingModule.withRoutes(routes),
+        MatInputModule,
+        MatAutocompleteModule,
+        MatCheckboxModule,
+        MatDatepickerModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatRadioModule,
+        MatSelectModule,
+        MatSliderModule,
+        MatSlideToggleModule,
+        MatMenuModule,
+        MatSidenavModule,
+        MatToolbarModule,
+        MatCardModule,
+        MatExpansionModule,
+        MatGridListModule,
+        MatListModule,
+        MatStepperModule,
+        MatTabsModule,
+        MatButtonModule,
+        MatButtonToggleModule,
+        MatChipsModule,
+        MatIconModule,
+        MatProgressSpinnerModule,
+        MatProgressBarModule,
+        MatDialogModule,
+        MatSnackBarModule,
+        MatTooltipModule,
+        MatPaginatorModule,
+        MatSortModule,
+        MatTableModule
       ],
-      providers: [ RouterService]
+      providers: [RouterService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -137,10 +139,10 @@ describe('NoteComponent', () => {
       element = debugElement.nativeElement;
       expect(element.textContent).toBe(testConfig.getNotes.positive.title,
         `should display 'title' property of notes into the <mat-card-title>`);
-     } else {
+    } else {
       expect(false).toBe(true,
         `should have an element <mat-card-title> in your note.component.html to display note 'title'`);
-     }
+    }
   });
 
   it('should handle click event of card and navigate to edit note route', fakeAsync(() => {
@@ -151,10 +153,10 @@ describe('NoteComponent', () => {
       tick();
       expect(location.path()).toBe(testConfig.getNotes.editNotePath,
         `should navigate to 'edit note' route and url should be as '/dashboard/(noteEditOutlet:note/1/edit')`);
-     } else {
+    } else {
       expect(false).toBe(true,
         `should have an element <mat-card> in your note.component.html`);
-     }
+    }
   }));
 
 
