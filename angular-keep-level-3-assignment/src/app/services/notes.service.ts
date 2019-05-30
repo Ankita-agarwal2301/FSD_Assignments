@@ -22,7 +22,7 @@ export class NotesService {
       .subscribe(data => {
         this.notes = data;
         this.notesSubject.next(this.notes);
-      });
+      },error=>{});
   }
 
   getNotes(): BehaviorSubject<Array<Note>> {
@@ -30,7 +30,7 @@ export class NotesService {
   }
 
   addNote(note: Note): Observable<Note> {
-    return this.http.post<Note>('http://localhost:3000/api/v1/notes', null,
+    return this.http.post<Note>('http://localhost:3000/api/v1/notes', note,
       { headers: new HttpHeaders().set('Authorization', `Bearer ${this.auth.getBearerToken()}`) })
       .pipe(tap(newNote => {
         this.notes.push(newNote);
@@ -43,8 +43,8 @@ export class NotesService {
       { headers: new HttpHeaders().set('Authorization', `Bearer ${this.auth.getBearerToken()}`) })
       .pipe(tap(newNote => {
         this.notes.forEach(element => {
-          if (element.id === newNote.id) {
-            Object.assign(element, newNote);
+          if (element.id === note.id) {
+            Object.assign(element, note);
             this.notesSubject.next(this.notes);
           }
         });
