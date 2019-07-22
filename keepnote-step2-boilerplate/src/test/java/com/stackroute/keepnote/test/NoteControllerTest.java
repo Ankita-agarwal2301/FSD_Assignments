@@ -76,7 +76,8 @@ public class NoteControllerTest {
 	public void testAddNotesSuccess() throws Exception {
 		when(noteDao.saveNote(any())).thenReturn(true);
 		mockMvc.perform(post("/add").param("noteTitle", note.getNoteTitle()).param("noteContent", note.getNoteContent())
-				.param("noteStatus", note.getNoteStatus())).andExpect(status().isFound()).andExpect(redirectedUrl("/"));
+				.param("noteStatus", note.getNoteStatus())).andExpect(status().isFound())
+		.andExpect(redirectedUrl("/"));
 	}
 
 	@Test
