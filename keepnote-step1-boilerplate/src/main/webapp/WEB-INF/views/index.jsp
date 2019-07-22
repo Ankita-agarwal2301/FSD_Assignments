@@ -97,7 +97,7 @@
                           <td>${note.noteStatus}</td>
                            <td>${note.createdAt}</td>
                           <td></td>
-                          <td><a href="deleteNote?id=${note.noteId}"><i class="fa fa-trash" style ="color:red;font-size:1.2em"></i></a></td>
+                          <td><a href="deleteNote?noteId=${note.noteId}"><i class="fa fa-trash" style ="color:red;font-size:1.2em"></i></a></td>
                        </tr>
                        </c:forEach>
                        

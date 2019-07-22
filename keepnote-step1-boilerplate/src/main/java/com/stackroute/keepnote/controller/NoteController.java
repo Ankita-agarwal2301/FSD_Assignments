@@ -52,17 +52,11 @@ public class NoteController {
 		return "index";
 	}
 	
-	//@RequestMapping(value="/deleteNote", method=RequestMethod.GET)
-	//@RequestMapping(value = "/deleteNote", method = RequestMethod.GET)
 	@GetMapping("/deleteNote")
-	public String deleteNote(@RequestParam("id") int noteId,RedirectAttributes attributes) {
+	public String deleteNote(@RequestParam int noteId) {
 		System.out.println("delete note is called  ");
 		this.noteRep.deleteNote(noteId);
-	
-		
-			attributes.addFlashAttribute("message", "This is message!");
-			//Redirect to request mapping "target" 
-			return "redirect:target";
+		return "redirect:/";
 	}
 	
 	
